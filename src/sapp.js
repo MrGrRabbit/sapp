@@ -1,4 +1,3 @@
-const dotenv = require("dotenv").config();
 const express = require("express");
 const Joi = require("joi");
 const app = express();
@@ -67,6 +66,7 @@ class Repository {
 }
 
 class UserRepository extends Repository {
+
   database = [
     { id: 0, name: "Daniel" },
     { id: 1, name: "Sergey" },
@@ -128,6 +128,5 @@ app.use((error, req, res, next) => {
   console.error(error);
   return res.sendStatus(500);
 });
-app.listen(process.env.PORT, () => {
-  console.warn(`App is listening on http://localhost:${process.env.PORT}`);
-});
+
+module.exports = app;
