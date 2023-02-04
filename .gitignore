@@ -1,0 +1,11 @@
+# Dependency directories
+
+/node_modules/*
+
+# Prettier config
+
+*.prettierrc
+
+# dotenv environment variables file
+
+.env
