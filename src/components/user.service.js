@@ -1,6 +1,6 @@
 class UserService {
     /**
-     * @type {UserRepository}
+     * @type {UserService}
      */
     repository;
     constructor(repository) {
@@ -16,4 +16,4 @@ class UserService {
     }
 }
 
-module.exports = {UserService}
+module.exports = { UserService }

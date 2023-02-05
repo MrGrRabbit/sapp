@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
-const {UserController} = require('./components/user.controller');
+const { UserRouter } = require('../src/router/router');
 
-
-app.use("/user", new UserController().router);
+app.use("/user", new UserRouter().router);
 app.use((error, req, res, next) => {
   if (error instanceof HttpError) {
     const { code, message } = error;
