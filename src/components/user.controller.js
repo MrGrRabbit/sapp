@@ -17,7 +17,7 @@ class UserController {
         return res.send(user);
     }
 
-    getUserName() {
+    getUserName = (req, res) => {
         const { userId } = req.params;
         const name = this.service.getUserName(userId);
         return res.send(`<h1 style="display: flex;">Hello, ${name}</h1>`);

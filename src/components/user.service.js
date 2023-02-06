@@ -12,6 +12,7 @@ class UserService {
     }
 
     getUserName(userId) {
+        console.log(userId);
         return this.repository.getUserName(userId);
     }
 }
