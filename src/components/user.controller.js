@@ -1,28 +1,33 @@
-const { UserRepository } = require('./user.repository');
 const { UserService } = require('./user.service');
+const { UserRepository } = require('./user.repository');
+const express = require('express');
+const { validate } = require('./validate/validate.service');
+const Joi = require('joi');
 
 /**
+ * @description А эта шляпа в сервис
  * @type {UserController}
- * @constructor 
+ * @constructor
  */
 
 class UserController {
-
+    router = express.Router();
     repository = new UserRepository();
     service = new UserService(this.repository);
 
-    getUser = (req, res) => {
-        const { userId } = req.params;
-        const user = this.service.getUser(userId);
-        return res.send(user);
-    }
+    /**
+     * from router
+     */
 
-    getUserName = (req, res) => {
-        const { userId } = req.params;
-        const name = this.service.getUserName(userId);
-        return res.send(`<h1 style="display: flex;">Hello, ${name}</h1>`);
-    }
+    constructor() {
+        const userValidator = {
+            params: Joi.object({ userId: Joi.number().min(0) }),
+        };
 
+        this.router.get('/:userId', validate(userValidator), this.service.getUser);
+
+        this.router.get('/:userId/name', validate(userValidator), this.service.getUserName);
+    }
 }
 
-module.exports = new UserController(); 
+module.exports = { UserController };

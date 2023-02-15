@@ -1,0 +1,15 @@
+{
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier, как форматтер по умолчанию
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true // работает аналогично eslint --fix
+        }
+    },
+    "editor.formatOnSave": true,
+    "editor.guides.highlightActiveIndentation": true,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#37423D",
+        "titleBar.activeBackground": "#37423D",
+        "titleBar.activeForeground": "#F3FDFB"
+    }
+}

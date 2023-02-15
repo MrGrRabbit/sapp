@@ -1,43 +1,20 @@
 {
-  "plugins": ["jest", "prettier"],
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    "plugin:prettier/recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "prettier"
-  ],
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true
-  },
-  "rules": {
-    "curly": 1,
-    "no-undef": 0,
-    "no-console": 0,
-    "no-unused-vars": 0,
-    "import/no-cycle": 0,
-    "lines-between-class-members": 0,
-    "prettier/prettier": "error",
-    "unicorn/prevent-abbreviations": "off",
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "always"
-      }
-    ]
-  },
-  "parserOptions": {
-    "ecmaVersion": 8,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": ["prettier"],
+    "overrides": [],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": 0,
+        "quotes": ["error", "single"],
+        "prefer-const": "error",
+        "indent": ["warn", 4],
+        "max-len": "off"
     }
-  }
 }

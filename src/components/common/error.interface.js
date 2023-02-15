@@ -1,7 +1,4 @@
-/**
- * @constructor
- * @description Error handling
- */
+//const HttpError = require('./error.middleware');
 class HttpError extends Error {
     code;
     message;
@@ -14,13 +11,15 @@ class HttpError extends Error {
 }
 
 class NotFoundError extends HttpError {
-    constructor(message = "Sorry, we have not found an entity") {
+    constructor(message = 'Sorry, we have not found an entity') {
         super(404, message);
     }
 }
 
 class BadRequestError extends HttpError {
-    constructor(message = "Request is invalid") {
+    constructor(message = 'Request is invalid') {
         super(400, message);
     }
 }
+
+module.exports = { NotFoundError, BadRequestError };

@@ -1,11 +1,11 @@
+const NotFoundError = require('./common/error.interface');
+const UserModel = require('./user.model');
 /**
  * @type {UserRepository}
  * @description class Repository include free database
  * @returns
  */
-class Repository {
-    database;
-
+class Repository extends UserModel {
     /**
      * Return entity by id
      * @param {number} id - entity id
@@ -18,16 +18,10 @@ class Repository {
 }
 
 class UserRepository extends Repository {
-
-    database = [
-        { id: 0, name: "Daniel" },
-        { id: 1, name: "Sergey" },
-    ];
-
     getUserName(id) {
         console.log(this.database[id].name);
         return this.database[id].name;
     }
 }
 
-module.exports = { UserRepository }
+module.exports = { UserRepository };

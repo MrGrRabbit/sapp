@@ -7,14 +7,18 @@ class UserService {
         this.repository = repository;
     }
 
-    getUser(userId) {
-        return this.repository.findById(userId);
-    }
+    getUser = (req, res) => {
+        const { userId } = req.params;
+        const user = this.repository.findById(userId);
+        return res.send(user);
+    };
 
-    getUserName(userId) {
+    getUserName = (req, res) => {
+        const { userId } = req.params;
         console.log(userId);
-        return this.repository.getUserName(userId);
-    }
+        const name = this.repository.getUserName(userId);
+        return res.send(`<h1 style="display: flex;">Hello, ${name}</h1>`);
+    };
 }
 
-module.exports = { UserService }
+module.exports = { UserService };
