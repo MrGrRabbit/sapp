@@ -1,7 +1,7 @@
 const { UserService } = require('./user.service');
 const { UserRepository } = require('./user.repository');
 const express = require('express');
-const { validate } = require('./validate/validate.service');
+const { validate } = require('../validate/validate.service');
 const Joi = require('joi');
 
 /**
