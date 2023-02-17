@@ -1,4 +1,4 @@
-const { BadRequestError } = require('../common/error.interface');
+const { BadRequestError } = require('../common/error/error.adapter');
 /**
  * Validate schema
  * @param {{body, query, params}} schema

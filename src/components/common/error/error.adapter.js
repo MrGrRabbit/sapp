@@ -1,4 +1,4 @@
-const { HttpError } = require('./error.service');
+const { HttpError } = require('./error.interface');
 
 class NotFoundError extends HttpError {
     constructor(message = 'Sorry, we have not found an entity') {

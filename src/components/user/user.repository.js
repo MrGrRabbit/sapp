@@ -1,4 +1,4 @@
-const { NotFoundError } = require('../common/error.interface');
+const { NotFoundError } = require('../common/error/error.adapter');
 const UserModel = require('./user.model');
 /**
  * @type {UserRepository}
