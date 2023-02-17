@@ -5,22 +5,23 @@ const UserModel = require('./user.model');
  * @description class Repository include free database
  * @returns
  */
-class Repository extends UserModel {
+class Repository {
     /**
      * Return entity by id
      * @param {number} id - entity id
      */
-    findById(id) {
-        const result = this.database.find((val) => val.id == id);
+    async findById(id) {
+        const result = await UserModel.database.find((val) => val.id == id);
         if (!result) throw new NotFoundError();
         else return result;
     }
 }
 
 class UserRepository extends Repository {
-    getUserName(id) {
-        console.log(this.database[id].name);
-        return this.database[id].name;
+    async getUserName(id) {
+        const name = await UserModel.database[id].name;
+        console.log(name);
+        return name;
     }
 }
 

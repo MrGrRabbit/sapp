@@ -12,13 +12,13 @@ const userValidator = {
     params: Joi.object({ userId: Joi.number().min(0) }),
 };
 
-router.get('/:userId', validate(userValidator), (req, res) => {
-    const user = service.getUser(req.params);
+router.get('/:userId', validate(userValidator), async (req, res) => {
+    const user = await service.getUser(req.params);
     return res.send(user);
 });
 
-router.get('/:userId/name', validate(userValidator), (req, res) => {
-    const name = service.getUserName(req.params);
+router.get('/:userId/name', validate(userValidator), async (req, res) => {
+    const name = await service.getUserName(req.params);
     return res.send(name);
 });
 
